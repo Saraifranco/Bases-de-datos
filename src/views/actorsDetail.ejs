@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= actor.last_name %> </title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+<body>
+    <figure>
+        <img src="/img/logo-DH.png" alt="Logo Digital House">
+    </figure>
+    <h1><%= actor.last_name %> </h1>    
+    <br>
+    <p>NOMBRE: <%= actor.first_name %> </p>
+    <p>APELLIDO: <%= actor.last_name %> </p>
+    <p>RATING: <%= actor.rating %> </p>
+    <div>
+        <form  action="/actors/delete/<%=actor.id %>?_method=DELETE" method="POST">
+        <br>
+        <button class="boton-personalizado" type="delete" value="Borrar" >Eliminar</button>
+        </form>
+    </div>  
+</body>
+</html>
