@@ -7,8 +7,9 @@ const sequelize = db.sequelize;
 const moviesController = {
     'list': (req, res) => {
         db.Movie.findAll({
-            include:[{association:"genres"}]
+            include:[{association:"genres"}, {association:"actors"}]
         })
+    
             .then(movies => {
                 res.render('moviesList.ejs', {movies})
             });

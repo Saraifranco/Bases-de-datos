@@ -19,11 +19,16 @@
          <li>
                <a href="/movies/detail/<%= movies[i].id %>">
                 <% if(movies[i].genres) { %>
-                <%= movies[i].title %> - <%= movies[i].genres.name %>
+                <%= movies[i].title %> - <%= movies[i].genres.name %> 
                 <% } %> <%= movies[i].title %> 
+
+                <% for( let j = 0; j < movies[i].actors.length; j++ ) { %>
+                    <%= movies[i].actors[j].first_name %>
+                <% } %>
             </a>  
          </li>
      <% } %>
+     
 
     </ul>
 </body>
